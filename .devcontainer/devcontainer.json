@@ -8,6 +8,7 @@
 
 	"workspaceFolder": "/workspace",
 	"postStartCommand": "/workspace/.devcontainer/post-start.sh",
+	"postCreateCommand": "/start.sh",
 
 	"extensions": [
 		"ms-vscode.powershell"

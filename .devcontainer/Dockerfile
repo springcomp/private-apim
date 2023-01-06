@@ -30,4 +30,7 @@ COPY ./Microsoft.PowerShell_profile.ps1 /root/.config/powershell/Microsoft.Power
  
 ENV PATH "$PATH:/root/.dotnet/tools/"
 
+COPY ./.devcontainer/start.sh /start.sh
+RUN chmod +x /start.sh
+
 WORKDIR /workspace
