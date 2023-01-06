@@ -31,6 +31,8 @@ COPY ./Microsoft.PowerShell_profile.ps1 /root/.config/powershell/Microsoft.Power
 ENV PATH "$PATH:/root/.dotnet/tools/"
 
 COPY ./.devcontainer/start.sh /start.sh
-RUN chmod +x /start.sh
+COPY ./.devcontainer/post-start.sh /post-start.sh
+RUN chmod +x /start.sh \
+ && chmod +x /post-start.sh
 
 WORKDIR /workspace

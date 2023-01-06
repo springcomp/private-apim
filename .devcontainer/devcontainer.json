@@ -6,8 +6,9 @@
 		"args": {}
 	},
 
-	"workspaceFolder": "/workspace",
-	"postStartCommand": "/workspace/.devcontainer/post-start.sh",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/src,type=bind,consistency=cached",
+	"workspaceFolder": "/src",
+	"postStartCommand": "/post-start.sh",
 	"postCreateCommand": "/start.sh",
 
 	"extensions": [
