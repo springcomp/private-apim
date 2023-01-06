@@ -2,7 +2,7 @@
 	"name": "Azure API Management",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"context": "..",
+		"context": ".",
 		"args": {}
 	},
 
