@@ -1,9 +1,13 @@
 {
-	"dockerComposeFile": [ "../docker-compose.yaml" ],
-	"service": "workspace",
+	"name": "Azure API Management",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "..",
+		"args": {}
+	},
+
 	"workspaceFolder": "/workspace",
 	"postStartCommand": "/workspace/.devcontainer/post-start.sh",
-	"shutdownAction": "stopCompose",
 
 	"extensions": [
 		"ms-vscode.powershell"
