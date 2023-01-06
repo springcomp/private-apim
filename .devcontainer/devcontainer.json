@@ -1,22 +1,32 @@
 {
-	"name": "Azure API Management",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"context": ".",
-		"args": {}
-	},
+  "name": "Azure API Management",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".",
+    "args": {}
+  },
 
-	"workspaceMount": "source=${localWorkspaceFolder},target=/src,type=bind,consistency=cached",
-	"workspaceFolder": "/src",
-	"postStartCommand": "/post-start.sh",
-	"postCreateCommand": "/start.sh",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/src,type=bind,consistency=cached",
+  "workspaceFolder": "/src",
+  "postStartCommand": "/post-start.sh",
+  "postCreateCommand": "/start.sh",
 
-	"extensions": [
-		"ms-vscode.powershell"
-	],
-	"forwardPorts": [],
-    "settings": {
-    	"terminal.integrated.defaultProfile.linux": "pwsh",
-    	"terminal.integrated.profiles.linux": { "pwsh": { "path": "pwsh" } }
+  "extensions": ["ms-vscode.powershell"],
+  "forwardPorts": [],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "pwsh",
+    "terminal.integrated.profiles.linux": { "pwsh": { "path": "pwsh" } }
+  },
+
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "springcomp/private-apim-codespaces": {
+          "permissions": {
+            "issues": "write"
+          }
+        }
+      }
     }
+  }
 }
