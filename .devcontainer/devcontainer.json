@@ -22,9 +22,7 @@
     "codespaces": {
       "repositories": {
         "springcomp/private-apim-codespaces": {
-          "permissions": {
-            "issues": "write"
-          }
+          "permissions": "write-all"
         }
       }
     }
