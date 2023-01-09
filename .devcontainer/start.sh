@@ -1,3 +1,3 @@
-#!/bin/env bash
+#!/bin/bash
 
-git clone git@github.com:springcomp/private-apim-codespaces.git
+git clone https://github.com/springcomp/private-apim-codespaces.git /workspace

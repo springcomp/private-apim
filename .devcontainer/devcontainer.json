@@ -7,7 +7,7 @@
   },
 
   "workspaceMount": "source=${localWorkspaceFolder},target=/src,type=bind,consistency=cached",
-  "workspaceFolder": "/src",
+  "workspaceFolder": "/workspace",
   "postStartCommand": "/post-start.sh",
   "postCreateCommand": "/start.sh",
 
