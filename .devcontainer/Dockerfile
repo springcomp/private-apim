@@ -32,7 +32,9 @@ ENV PATH "$PATH:/root/.dotnet/tools/"
 
 COPY ./start.sh /start.sh
 COPY ./post-start.sh /post-start.sh
+COPY ./azdo.sh /azdo.sh
 RUN chmod +x /start.sh \
- && chmod +x /post-start.sh
+ && chmod +x /post-start.sh \
+ && chmod +x /azdo.sh
 
 WORKDIR /workspace
