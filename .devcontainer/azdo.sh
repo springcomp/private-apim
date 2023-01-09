@@ -136,7 +136,7 @@ else
     echo -e "$FMT_RED""Missing required ADO_REPO_URL or ADO_REPO_PAT variable.$FMT_CLEAR"
   else
     echo -e "$FMT_LIGHTGREEN_UNDERLINE""Cloning $ADO_REPO_URL in $workspace…$FMT_CLEAR"
-    git config --global --set http.extraHeader="Authorization: Basic $ADO_REPO_PAT" 
-    git clone $ADO_REPO_URL $workspace
+    git -c http.extraHeader="Authorization: Basic $ADO_REPO_PAT" clone $ADO_REPO_URL $workspace
+    git config --local http.extraHeader="Authorization: Basic $ADO_REPO_PAT" 
   fi
 fi
