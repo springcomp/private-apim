@@ -7,7 +7,7 @@ RUN git clone https://github.com/springcomp/azure-api-management-devops-resource
  && dotnet pack -c Release \
  && dotnet tool install -g --add-source ./bin/Release/ apim-templates
 
-SHELL ["/opt/microsoft/powershell/7/pwsh", "-c"]
+SHELL ["/usr/bin/pwsh", "-c"]
 
 RUN New-Item -ItemType Directory -Path /root/.config -EA SilentlyContinue | Out-Null; \
     New-Item -ItemType Directory -Path /root/.config/powershell -EA SilentlyContinue | Out-Null;
