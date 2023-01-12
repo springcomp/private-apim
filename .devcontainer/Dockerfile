@@ -1,6 +1,8 @@
 FROM mcr.microsoft.com/azure-powershell
 
-RUN git clone https://github.com/springcomp/azure-api-management-devops-resource-kit.git /tmp/apim-templates/ \
+RUN apt-get update \
+ && apt-get install -y git
+ && git clone https://github.com/springcomp/azure-api-management-devops-resource-kit.git /tmp/apim-templates/ \
  && cd /tmp/apim-templates/src/APIM_ARMTemplate/apimtemplate \
  && git checkout 389909db01d3ca1aeeec75ce011f9bd19aeaf94e \
  && dotnet publish -c Release \
