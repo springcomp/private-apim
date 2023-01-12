@@ -14,8 +14,13 @@
   "extensions": ["ms-vscode.powershell"],
   "forwardPorts": [],
   "settings": {
+    "powershell.integratedConsole.showOnStartup": false,
     "terminal.integrated.defaultProfile.linux": "pwsh",
     "terminal.integrated.profiles.linux": { "pwsh": { "path": "pwsh" } }
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
   },
 
   "customizations": {
