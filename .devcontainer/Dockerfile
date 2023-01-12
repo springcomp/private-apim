@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:3.1
+FROM mcr.microsoft.com/azure-powershell
 
 RUN git clone https://github.com/springcomp/azure-api-management-devops-resource-kit.git /tmp/apim-templates/ \
  && cd /tmp/apim-templates/src/APIM_ARMTemplate/apimtemplate \
@@ -7,9 +7,7 @@ RUN git clone https://github.com/springcomp/azure-api-management-devops-resource
  && dotnet pack -c Release \
  && dotnet tool install -g --add-source ./bin/Release/ apim-templates
 
-SHELL ["/usr/bin/pwsh", "-c"]
-
-RUN Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+SHELL ["/opt/microsoft/powershell/7/pwsh", "-c"]
 
 RUN New-Item -ItemType Directory -Path /root/.config -EA SilentlyContinue | Out-Null; \
     New-Item -ItemType Directory -Path /root/.config/powershell -EA SilentlyContinue | Out-Null;
